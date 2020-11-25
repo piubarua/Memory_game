@@ -1,19 +1,23 @@
-<!doctype html>
+<!Doctype html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Matching Game</title>
-    <meta name="description" content="">
-    <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-    <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
+    <title>Memory Game</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">    <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
+<!--<link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">-->
     <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
 
     <div class="container">
         <header>
-            <h1>Matching Game</h1>
+            <h1 class="game-title">Memory Game</h1>
         </header>
+
+
 
         <section class="score-panel">
         	<ul class="stars">
@@ -22,65 +26,91 @@
         		<li><i class="fa fa-star"></i></li>
         	</ul>
 
-        	<span class="moves">3</span> Moves
+
+
+        <div class="moves-timer">
+            <span><b class="moves">0</b>&nbsp;Moves</span>
+            
+            <b class="timer">00:00</b>
+        </div>
+
+
 
             <div class="restart">
-        		<i class="fa fa-repeat"></i>
+        		<i class="fas fa-redo restart success_restart tooltip"><span class="tooltiptext"></span></i>
         	</div>
         </section>
 
+
+    <div class="deck-container">
         <ul class="deck">
-            <li class="card">
-                <i class="fa fa-diamond"></i>
+            <li class="card match">
+                <i class="fas fa-gem"></i>
             </li>
-            <li class="card">
-                <i class="fa fa-paper-plane-o"></i>
+            <li class="card match">
+                <i class="fas fa-paper-plane"></i>
+            </li>
+            <li class="card match">
+                <i class="fas fa-anchor"></i>
+            </li>
+            <li class="card match">
+                <i class="fas fa-bolt"></i>
+            </li>
+            <li class="card match">
+                <i class="fas fa-cube"></i>
             </li>
             <li class="card match">
                 <i class="fa fa-anchor"></i>
             </li>
-            <li class="card">
-                <i class="fa fa-bolt"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-cube"></i>
+            <li class="card match">
+                <i class="fas fa-leaf"></i>
             </li>
             <li class="card match">
-                <i class="fa fa-anchor"></i>
+                <i class="fas fa-motorcycle"></i>
             </li>
-            <li class="card">
-                <i class="fa fa-leaf"></i>
+            <li class="card match">
+                <i class="fas fa-gem"></i>
             </li>
-            <li class="card">
-                <i class="fa fa-bicycle"></i>
+            <li class="card match">
+                <i class="fas fa-bomb"></i>
             </li>
-            <li class="card">
-                <i class="fa fa-diamond"></i>
+            <li class="card match">
+                <i class="fas fa-leaf"></i>
             </li>
-            <li class="card">
-                <i class="fa fa-bomb"></i>
+            <li class="card match">
+                <i class="fas fa-bomb"></i>
             </li>
-            <li class="card">
-                <i class="fa fa-leaf"></i>
+            <li class="card match">
+                <i class="fas fa-bolt"></i>
             </li>
-            <li class="card">
-                <i class="fa fa-bomb"></i>
+            <li class="card match">
+                <i class="fas fa-motorcycle"></i>
             </li>
-            <li class="card open show">
-                <i class="fa fa-bolt"></i>
+            <li class="card match">
+                <i class="fas fa-paper-plane"></i>
             </li>
-            <li class="card">
-                <i class="fa fa-bicycle"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-paper-plane-o"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-cube"></i>
+            <li class="card match">
+                <i class="fas fa-cube"></i>
             </li>
         </ul>
     </div>
+</div>
 
+
+
+<div class="modal_back visible">
+    <div class="modal--success">
+        <span class="modal_close"><i class="fas fa-times-circle"></i></span>
+        <h1 class="modal_header">Congratulations!</h1>
+        <hr class="modal_hr">
+        <div class="modal_body">
+            <p>You have completed the game in <b class="result_moves">xx</b>moves<br></p>
+            <p>Your rating is <b class="result_rating">x.x</b></p>
+
+            <i class="fas fa-redo success_restart tooltip"><span class="tooltiptext">Restart</span></i>
+        </div>
+    </div>
+</div>
     <script src="js/app.js"></script>
 </body>
 </html>
