@@ -1,8 +1,69 @@
+const { func } = require("prop-types");
+
+//list of types of tile of a card
+const tiles={
+    "ANCHOR": "fa-anchor",
+    "BICYCLE": "fa-motorcycle",
+    "BOLT": "fa-bolt",
+    "BOMB": "fa-bomb",
+    "CUBE": "fa-cube",
+    "DIAMOND": "fa-gem",
+    "LEAF": "fa-leaf",
+    "PAPER_PLANE": "fa-paper-plane"
+};
+
+Object.freeze(tiles);
+
+//list to store status of a card
+const status={
+    "OPENED":"open",
+    "CLOSED": "close",
+    "MATCHED": "match"
+};
+Object.freeze(status);
+
+//constructor to create a card
+function Card(tileType,status){
+    this.tileType=tileType;
+    this.status=status;
+}
+
 /*
- * Create a list that holds all of your cards
- */
+*timer class to update game timer every second
+*start() to start the timer amnd stop() to stop the timer
+*/
 
+class Timer{
+    constructor(ele){
+        this.element=ele;
+    }
 
+    //start the timer
+    start(){
+        //fetch the start time of the game
+        this.startTime= new Date().getTime();
+        this.timerInterval=setInterval(()=>{
+            //get current time
+            const date=new Date();
+
+            //format the time to min:sec
+            let millis=date.getTime()-this.startTime;
+            let secs=parseInt(millis/1000);
+            millis%=parseInt(1000);
+            let mins=parseInt(secs/60);
+            secs=parseInt(secs%60);
+
+            //update the time
+            this.element.textContent=("0"+mins).slice(-2)+ ":"+("0"+secs).slice(-2);
+            },1000);
+    }
+
+    //stop the timer
+    stop(){
+        window.clearInterval(this.timerInterval);
+        this.timerInterval=null;
+    }
+}
 /*
  * Display the cards on the page
  *   - shuffle the list of cards using the provided "shuffle" method below

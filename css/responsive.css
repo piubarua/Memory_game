@@ -1,0 +1,82 @@
+/*
+ *  Screen width >= 300px
+ *  Increases size of elements
+ */
+ @media screen and (min-width: 300px) {
+    /* Increase title font size */
+    .game-title {
+        font-size: 40px;
+    }
+
+    /* Increase score panel's size */
+    .score-panel {
+        font-size: 20px;
+    }
+
+    /* Increase cards' size */
+    .deck .card.open,
+    .deck .card.match {
+        font-size: 32px;
+    }
+}
+
+/*
+ *  Screen width >= 500px
+ *  Increases game title
+ */
+@media screen and (min-width: 500px) {
+    /* Increase game title */
+    .game-title {
+        font-size: 42px;
+    }
+}
+
+/*
+ *  Screen width >= 600px
+ *  Increase fonts.
+ *  Improve deck's visuals for larger devices.
+ *  Decrease modal's width %.
+ */
+@media screen and (min-width: 600px) {
+    .game-title {
+        font-size: 48px;
+    }
+
+    /* Make space around deck */
+    .deck-container {
+        max-width: 95%;
+    }
+
+    /* Add border radius and shadow to deck */
+    .deck {
+        border-radius: 10px;
+        box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+    }
+
+    /* Increase spacing between cards */
+    .deck .card {
+        width: 22%;
+        height: 22%;
+    }
+
+    .deck .card.open,
+    .deck .card.match {
+        font-size: 40px;
+    }
+
+    /* Decrease modal's width coverage */
+    .modal--success {
+        max-width: 65%;
+    }
+}
+
+/*
+ *  Screen width >= 768px
+ *  Improve modal's visuals
+ */
+@media screen and (min-width: 768px) {
+    /* Decrease modal's width coverage */
+    .modal--success {
+        max-width: 50%;
+    }
+}
