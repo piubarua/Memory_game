@@ -17,10 +17,11 @@ body {
 }
 
 body {
-    background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
+    background: #ffffff url('http://i0.wp.com/dumbosdiary.com/wp-content/uploads/2016/08/spring-whatsapp-background.png?fit=799%2C1240'); /* Background pattern from Subtle Patterns */
     font-family: 'Coda', cursive;
 }
 
+/* Game container */
 .container {
     display: flex;
     justify-content: center;
@@ -33,8 +34,13 @@ h1 {
     font-weight: 300;
 }
 
-/*modal's back to disable the webpage*/
-.modal_back{
+
+/*
+ *  Global styles
+ */
+
+/* Modal's back to disable the webpage */
+.modal_back {
     position: fixed;
     top: 0;
     left: 0;
@@ -44,22 +50,28 @@ h1 {
     height: 100%;
 }
 
-/*show the element*/
-.visible{
+/* Show the element */
+.visible {
     visibility: visible;
 }
 
-/*hiding the element*/
-.hide{
+/* Hide the element */
+.hide {
     visibility: hidden;
 }
 
-.tooltip{
+/*
+ *  Tooltip styles
+ */
+
+/* Tooltip triggerer */
+.tooltip {
     position: relative;
     display: inline-block;
 }
 
-.tooltip .tooltiptext{
+/* Tooltip content */
+.tooltip .tooltiptext {
     visibility: hidden;
     background-color: #55555500;
     color: #00000000;
@@ -76,42 +88,48 @@ h1 {
     transition: all 0.3s;
 }
 
-.tooltip:hover .tooltiptext{
+/* Tooltip hover effect to show the tooltip */
+.tooltip:hover .tooltiptext {
     visibility: visible;
-    transform: scale(1,1);
+    transform: scale(1, 1);
     background-color: #555;
     color: white;
     box-shadow: 2px 1px 10px 0 #333;
     bottom: 120%;
 }
 
-.game-title{
+/* Name of the game */
+.game-title {
     text-align: center;
     font-size: 32px;
     margin: 4px;
+    font-family: 'Langar', cursive;
 }
 
-.deck-container{
+/*
+ * Styles for the deck of cards
+ */
+
+ /* Container for cards' deck */
+.deck-container {
     max-width: 100%;
     height: 100%;
 }
 
-
-
 .deck {
     list-style: none;
+    padding: 4px;
     width: 600px;
     max-width: 100%;
     height: 100%;
     background: linear-gradient(160deg, #00a1f2 0%, #aa7ecd 100%);
-    padding: 4px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
 }
 
-
+/* Cards of the deck */
 .deck .card {
     min-width: 16px;
     min-height: 16px;
@@ -129,6 +147,7 @@ h1 {
     transition: all 500ms;
 }
 
+/* Opened card's style */
 .deck .card.open {
     cursor: default;
     transform: rotateY(0);
@@ -136,12 +155,13 @@ h1 {
     font-size: 24px;
 }
 
-
+/* Closed card's style */
 .deck .card.close {
     transform: rotateY(180);
     font-size: 0;
 }
 
+/* Matched card's style */
 .deck .card.match {
     cursor: default;
     transform: rotateY(0);
@@ -154,13 +174,14 @@ h1 {
  * Styles for the Score Panel
  */
 
- .score-panel {
+.score-panel {
     font-size: 16px;
     text-align: center;
     width: 50%;
     max-width: 600px;
 }
 
+/* Rating stars */
 .score-panel .stars {
     color: #00a1f2;
     margin: 0;
@@ -168,6 +189,10 @@ h1 {
     display: inline-block;
 }
 
+.score-panel .stars li {
+    list-style: none;
+    display: inline-block;
+}
 
 .moves-timer {
     display: flex;
@@ -175,10 +200,9 @@ h1 {
 }
 
 
-.score-panel .stars li {
-    list-style: none;
-    display: inline-block;
-}
+/**
+ *  SUCCESS MODAL
+ */
 
 .modal--success {
     display: flex;
